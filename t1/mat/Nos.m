@@ -5,7 +5,6 @@ clear all
 
 pkg load symbolic
 
-% RESET
 syms R1
 syms R2
 syms R3
@@ -35,17 +34,16 @@ syms v8
 
 %%  Lei dos Nós
 
-printf("\n\nKNL equation:\n");
+printf("\n\nKNL equações:\n");
 
-printf("\n\Knots equation:\n");
+printf("\n\Knots equações:\n");
 Ic+(v8-v7)/R7 == 0
 (v5-v6)/R5-Ib+Id == 0
 Ib+(v2-v3)/R2 == 0
 (v3-v2)/R2-Vb/R3+(v1-v2)/R1 == 0
-printf("\n\SuperKnots equation:\n");
+printf("\n\SuperKnots equações:\n");
 (v7-v8)/R7-Id+(v4-v5)/R4+Vb/R3+(v6-v5)/R5 == 0
-%-Ic+(v5-v4)/R4+(v2-v1)/R1 == 0
-
+-Ic+(v5-v4)/R4+(v2-v1)/R1 == 0
 printf("\n\Por observação do circuito\n");
 
 v4 == 0
@@ -56,26 +54,29 @@ v2-v5 == Vb
 Ic = (v4-v7)/R6
 Vc = Kc*Ic
 Ib = Kb*Vb
+printf("\n\Como uma das equações do SuperKnots não é necessária, retiramos a maior:\n");
+(v7-v8)/R7-Id+(v4-v5)/R4+Vb/R3+(v6-v5)/R5 == 0
 
-R1=2e3
-R2=3e3
-R3=4e3
-R4=4e3
-R5=3e3
-R6=2e3
-R7=1e3
+%%  Atribuição de Valores
 
-Kb=7e-3
-Kc=8e-3
+R1 = 1.03258022265e3
+R2 = 2.05854281116e3 
+R3 = 3.05658918951e3 
+R4 = 4.12083818633e3 
+R5 = 3.10223748153e3 
+R6 = 2.09909352125e3 
+R7 = 1.01569886691e3 
 
-Va=5
-Id=1e-3
+Va = 5.19832384287 
+Id = 1.04739543259e-3 
+
+Kb = 7.07448059081e-3 
+Kc = 8.22345657857e3 
 
 A = [ 0     , 0         , 0     , 0     , 0         , 0     , -1/R7 , 1/R7  , 0     , 0 , 0 , 1   ;...
       0     , 0         , 0     , 0     , 1/R5      , -1/R5 , 0     , 0     , 0     , 0 , -1, 0   ;...
       0     , 1/R2      , -1/R2 , 0     , 0         , 0     , 0     , 0     , 0     , 0 , 1 , 0   ;...
       1/R1  , -1/R2-1/R1, 1/R2  , 0     , 0         , 0     , 0     , 0     , -1/R3 , 0 , 0 , 0   ;...
- %     0     , 0         , 0     , 1/R4  , -1/R4-1/R5, 1/R5  , 1/R7  , -1/R7 , 1/R3  , 0 , 0 , 0   ;...
       -1/R1 , 1/R1      , 0     , -1/R4 , 1/R4      , 0     , 0     , 0     , 0     , 0 , 0 , -1  ;...
       0     , 0         , 0     , 1     , 0         , 0     , 0     , 0     , 0     , 0 , 0 , 0   ;...
       1     , 0         , 0     , -1    , 0         , 0     , 0     , 0     , 0     , 0 , 0 , 0   ;...
@@ -83,10 +84,20 @@ A = [ 0     , 0         , 0     , 0     , 0         , 0     , -1/R7 , 1/R7  , 0 
       0     , 1         , 0     , 0     , -1        , 0     , 0     , 0     , -1    , 0 , 0 , 0   ;...
       0     , 0         , 0     , 1/R6  , 0         , 0     , -1/R6 , 0     , 0     , 0 , 0 , -1  ;...
       0     , 0         , 0     , 0     , 0         , 0     , 0     , 0     , 0     , 1 , 0 , -Kc ;...
-      0     , 0         , 0     , 0     , 0         , 0     , 0     , 0     , -Kb   , 0 , 1 , 0   ]
+      0     , 0         , 0     , 0     , 0         , 0     , 0     , 0     , -Kb   , 0 , 1 , 0   ];
 
-B = [ 0; -Id; 0; 0; 0; 0; Va; 0; 0; 0; 0; 0]
+B = [ 0; -Id; 0; 0; 0; 0; Va; 0; 0; 0; 0; 0];
 
 x = A\B
-
-teste = x(12) - (x(4)-x(7))/R6
+v1=x(1);
+v2=x(2);
+v3=x(3);
+v4=x(4);
+v5=x(5);
+v6=x(6);
+v7=x(7);
+v8=x(8);
+Vb=x(9)
+Vc=x(10)
+Ib=x(11)
+Ic=x(12)
