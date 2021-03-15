@@ -46,19 +46,19 @@ Vb = R3*(Ialfa-Ibeta)
 
 %%EXAMPLE NUMERIC COMPUTATIONS
 
-R1=2e3
-R2=3e3
-R3=4e3
-R4=4e3
-R5=3e3
-R6=2e3
-R7=1e3
+R1 = 1.03258022265e3
+R2 = 2.05854281116e3 
+R3 = 3.05658918951e3 
+R4 = 4.12083818633e3 
+R5 = 3.10223748153e3 
+R6 = 2.09909352125e3 
+R7 = 1.01569886691e3 
 
-Kb=7e-3
-Kc=8e-3
+Va = 5.19832384287 
+Id = 1.04739543259e-3 
 
-Va=5
-Id=1e-3
+Kb = 7.07448059081e-3 
+Kc = 8.22345657857e3
 
 A = [ R1+R4 , 0 , 0, -R4      , 1   , 0, 0, 0   ;...
       0     , 1 , 0, 0        , 0   , 0, 1, 0   ;...
@@ -81,27 +81,3 @@ Vb    = x(5)
 Vc    = x(6)
 Ib    = x(7)
 Ic    = x(8)
-
-v4 = 0;
-v7 = v4 - Ic*R6;
-v8 = v7 - Ic*R7;
-v5 = v8 + Vc
-v5 = v4 +R4*(Ialfa-Itau)
-v6 = v5 - R5*(Igama-Ibeta);
-v1 = v4 + Va;
-v2 = v1 - R1*Ialfa
-v2 = v5 + Vb
-v3 = v2 - R2*Ibeta;
-
-v1
-v2
-v3
-v4
-v5
-v6
-v7
-v8
-Vb
-Vc
-Ib
-Ic
