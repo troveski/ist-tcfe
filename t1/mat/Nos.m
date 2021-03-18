@@ -89,15 +89,32 @@ A = [ 0     , 0         , 0     , 0     , 0         , 0     , -1/R7 , 1/R7  , 0 
 B = [ 0; -Id; 0; 0; 0; 0; Va; 0; 0; 0; 0; 0];
 
 x = A\B
-v1=x(1);
-v2=x(2);
-v3=x(3);
-v4=x(4);
-v5=x(5);
-v6=x(6);
-v7=x(7);
-v8=x(8);
+v1=x(1)
+v2=x(2)
+v3=x(3)
+v4=x(4)
+v5=x(5)
+v6=x(6)
+v7=x(7)
+v8=x(8)
 Vb=x(9)
 Vc=x(10)
 Ib=x(11)
 Ic=x(12)
+
+%	Impressão da Tabela
+fid = fopen ("Nos_tab.tex", "w");
+fprintf(fid, "$v_{1}$ & %e \\\\ \\hline \n", v1);
+fprintf(fid, "$v_{2}$ & %e \\\\ \\hline \n", v2);
+fprintf(fid, "$v_{3}$ & %e \\\\ \\hline \n", v3);
+fprintf(fid, "$v_{4}$ & %e \\\\ \\hline \n", v4);
+fprintf(fid, "$v_{5}$ & %e \\\\ \\hline \n", v5);
+fprintf(fid, "$v_{6}$ & %e \\\\ \\hline \n", v6);
+fprintf(fid, "$v_{7}$ & %e \\\\ \\hline \n", v7);
+fprintf(fid, "$v_{8}$ & %e \\\\ \\hline \n", v8);
+
+fprintf(fid, "$V_{b}$ & %e \\\\ \\hline \n", Vb);
+fprintf(fid, "$V_{c}$ & %e \\\\ \\hline \n", Vc);
+fprintf(fid, "@$I_{b}$ & %e \\\\ \\hline \n", Ib);
+fprintf(fid, "@$I_{c}$ & %e \\\\ \\hline \n", Ic);
+fclose (fid);

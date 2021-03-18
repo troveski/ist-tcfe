@@ -28,20 +28,20 @@ syms Id
 syms Ialfa
 syms Ibeta
 syms Igama
-syms Itau
+syms Idelta
 
 printf("\n\nKVL equation:\n");
 
--Va+Ialfa*R1+Vb+R4*(Ialfa-Itau) == 0
+-Va+Ialfa*R1+Vb+R4*(Ialfa-Idelta) == 0
 Ibeta = -Ib
 Igama = -Id
-R6*Itau+R4*(Itau-Ialfa)+Vc+R7*Itau == 0
+R6*Idelta+R4*(Idelta-Ialfa)+Vc+R7*Idelta == 0
 
 printf("\n\Por observação do circuito\n");
 
 Vc = Kc*Ic
 Ib = Kb*Vb
-Ic = -Itau
+Ic = -Idelta
 Vb = R3*(Ialfa-Ibeta)
 
 %%EXAMPLE NUMERIC COMPUTATIONS
@@ -76,8 +76,21 @@ x = A\B;
 Ialfa = x(1)
 Ibeta = x(2)
 Igama = x(3)
-Itau  = x(4)
+Idelta= x(4)
 Vb    = x(5)
 Vc    = x(6)
 Ib    = x(7)
 Ic    = x(8)
+
+%	Impressão da Tabela
+fid = fopen ("Malhas_tab.tex", "w");
+fprintf(fid, "@$I_{\\alpha}$ & %e \\\\ \\hline \n", Ialfa);
+fprintf(fid, "@$I_{\\beta}$ & %e \\\\ \\hline \n",  Ibeta);
+fprintf(fid, "@$I_{\\gamma}$ & %e \\\\ \\hline \n", Igama);
+fprintf(fid, "@$I_{\\delta}$ & %e \\\\ \\hline \n", Idelta);
+
+fprintf(fid, "$V_{b}$ & %e \\\\ \\hline \n", Vb);
+fprintf(fid, "$V_{c}$ & %e \\\\ \\hline \n", Vc);
+fprintf(fid, "@$I_{b}$ & %e \\\\ \\hline \n", Ib);
+fprintf(fid, "@$I_{c}$ & %e \\\\ \\hline \n", Ic);
+fclose (fid);
