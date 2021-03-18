@@ -83,14 +83,25 @@ Ib    = x(7)
 Ic    = x(8)
 
 %	Impressão da Tabela
-fid = fopen ("Malhas_tab.tex", "w");
-fprintf(fid, "@$I_{\\alpha}$ & %e \\\\ \\hline \n", Ialfa);
-fprintf(fid, "@$I_{\\beta}$ & %e \\\\ \\hline \n",  Ibeta);
-fprintf(fid, "@$I_{\\gamma}$ & %e \\\\ \\hline \n", Igama);
-fprintf(fid, "@$I_{\\delta}$ & %e \\\\ \\hline \n", Idelta);
+%fid = fopen ("Malhas_tab.tex", "w");
+%fprintf(fid, "@$I_{\\alpha}$ & %e \\\\ \\hline \n", Ialfa);
+%fprintf(fid, "@$I_{\\beta}$ & %e \\\\ \\hline \n",  Ibeta);
+%fprintf(fid, "@$I_{\\gamma}$ & %e \\\\ \\hline \n", Igama);
+%fprintf(fid, "@$I_{\\delta}$ & %e \\\\ \\hline \n", Idelta);
 
-fprintf(fid, "$V_{b}$ & %e \\\\ \\hline \n", Vb);
-fprintf(fid, "$V_{c}$ & %e \\\\ \\hline \n", Vc);
-fprintf(fid, "@$I_{b}$ & %e \\\\ \\hline \n", Ib);
-fprintf(fid, "@$I_{c}$ & %e \\\\ \\hline \n", Ic);
-fclose (fid);
+%fprintf(fid, "$V_{b}$ & %e \\\\ \\hline \n", Vb);
+%fprintf(fid, "$V_{c}$ & %e \\\\ \\hline \n", Vc);
+%fprintf(fid, "@$I_{b}$ & %e \\\\ \\hline \n", Ib);
+%fprintf(fid, "@$I_{c}$ & %e \\\\ \\hline \n", Ic);
+%fclose (fid);
+printf("Malhas_TAB \n")
+printf("@$I_{\\alpha}$ = %e \n", Ialfa);
+printf("@$I_{\\beta}$ = %e \n",  Ibeta);
+printf("@$I_{\\gamma}$ = %e \n", Igama);
+printf("@$I_{\\delta}$ = %e \n", Idelta);
+
+printf("$V_{b}$ = %e \n", Vb);
+printf("$V_{c}$ = %e \n", Vc);
+printf("@$I_{b}$ = %e \n", Ib);
+printf("@$I_{c}$ = %e \n", Ic);
+printf("Malhas_END \n")

@@ -103,18 +103,34 @@ Ib=x(11)
 Ic=x(12)
 
 %	Impressão da Tabela
-fid = fopen ("Nos_tab.tex", "w");
-fprintf(fid, "$v_{1}$ & %e \\\\ \\hline \n", v1);
-fprintf(fid, "$v_{2}$ & %e \\\\ \\hline \n", v2);
-fprintf(fid, "$v_{3}$ & %e \\\\ \\hline \n", v3);
-fprintf(fid, "$v_{4}$ & %e \\\\ \\hline \n", v4);
-fprintf(fid, "$v_{5}$ & %e \\\\ \\hline \n", v5);
-fprintf(fid, "$v_{6}$ & %e \\\\ \\hline \n", v6);
-fprintf(fid, "$v_{7}$ & %e \\\\ \\hline \n", v7);
-fprintf(fid, "$v_{8}$ & %e \\\\ \\hline \n", v8);
+%fid = fopen ("Nos_tab.tex", "w");
+%fprintf(fid, "$v_{1}$ & %e \\\\ \\hline \n", v1);
+%fprintf(fid, "$v_{2}$ & %e \\\\ \\hline \n", v2);
+%fprintf(fid, "$v_{3}$ & %e \\\\ \\hline \n", v3);
+%fprintf(fid, "$v_{4}$ & %e \\\\ \\hline \n", v4);
+%fprintf(fid, "$v_{5}$ & %e \\\\ \\hline \n", v5);
+%fprintf(fid, "$v_{6}$ & %e \\\\ \\hline \n", v6);
+%fprintf(fid, "$v_{7}$ & %e \\\\ \\hline \n", v7);
+%fprintf(fid, "$v_{8}$ & %e \\\\ \\hline \n", v8);
 
-fprintf(fid, "$V_{b}$ & %e \\\\ \\hline \n", Vb);
-fprintf(fid, "$V_{c}$ & %e \\\\ \\hline \n", Vc);
-fprintf(fid, "@$I_{b}$ & %e \\\\ \\hline \n", Ib);
-fprintf(fid, "@$I_{c}$ & %e \\\\ \\hline \n", Ic);
-fclose (fid);
+%fprintf(fid, "$V_{b}$ & %e \\\\ \\hline \n", Vb);
+%fprintf(fid, "$V_{c}$ & %e \\\\ \\hline \n", Vc);
+%fprintf(fid, "@$I_{b}$ & %e \\\\ \\hline \n", Ib);
+%fprintf(fid, "@$I_{c}$ & %e \\\\ \\hline \n", Ic);
+
+%fclose (fid);
+printf("Nos_TAB \n")
+printf("$v_{1}$ = %e \n", v1);
+printf("$v_{2}$ = %e \n", v2);
+printf("$v_{3}$ = %e \n", v3);
+printf("$v_{4}$ = %e \n", v4);
+printf("$v_{5}$ = %e \n", v5);
+printf("$v_{6}$ = %e \n", v6);
+printf("$v_{7}$ = %e \n", v7);
+printf("$v_{8}$ = %e \n", v8);
+
+printf("$V_{b}$ = %e \n", Vb);
+printf("$V_{c}$ = %e \n", Vc);
+printf("@$I_{b}$ = %e \n", Ib);
+printf("@$I_{c}$ = %e \n", Ic);
+printf("Nos_END \n")
