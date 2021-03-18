@@ -15,7 +15,8 @@ $(FILE).pdf: $(wildcard *.tex) $(LODFIGS) octave.log ngspice
 	pdflatex  $(FILE).tex
 
 octave.log:
-	octave ../mat/rc.m > octave.log
+	octave ../mat/Malhas.m > octaveMalhas.log
+	octave ../mat/Nos.m > octaveNos.log	
 
 ngspice: ngspice.log
 	$(eval NGSFIGS=$(shell grep _FIG $< | sed 's/_FIG//g' | sed ':a;N;$!ba;s/\n/ /g'))
