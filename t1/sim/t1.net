@@ -17,14 +17,11 @@ R2 2 3 2.05854281116k
 R3 2 5 3.05658918951k 
 R4 4 5 4.12083818633k 
 R5 5 6 3.10223748153k 
-R6 aux4 7 2.09909352125k 
+R6 0 7 2.09909352125k 
 R7 7 8 1.01569886691k
 
-* Ground
-VGround 4 gnd 0V
-
-* Test Voltage
-V3 4 aux4 0V
+* Test
+V3 4 0 0V
 
 * Linear dependent Sources
 Gb 6 3 (2,5) 7.07448059081m
